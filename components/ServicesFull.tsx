@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowUpRight, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { services } from '@/lib/services';
 
@@ -16,74 +17,90 @@ export default function ServicesFull() {
         </p>
       </div>
 
-      <div className="space-y-20 md:space-y-28">
+      <div className="border-t border-border-dark">
         {services.map((service, index) => {
           const Icon = service.icon;
+          const serviceNumber = String(service.id).padStart(2, '0');
 
           return (
-            <motion.div
+            <motion.article
               key={service.id}
-              initial={{ opacity: 0, y: 30 }}
+              aria-labelledby={`service-${service.id}-title`}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.45, delay: index * 0.04 }}
               viewport={{ once: true }}
-              className="border-t border-border-dark pt-10 md:pt-14 first:border-0 first:pt-0"
+              className="grid gap-10 border-b border-border-dark py-12 md:grid-cols-[minmax(0,0.85fr)_minmax(20rem,1.15fr)] md:gap-16 md:py-16 lg:gap-24 lg:py-20"
             >
-            <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-              {/* Left Column */}
-              <div>
-                <div className="flex items-center gap-4 mb-4">
-                  <Icon className="w-8 h-8 text-amber-energy" aria-hidden="true" />
-                  <span className="text-[0.7rem] font-semibold tracking-[0.08em] uppercase text-amber-energy">
-                    Service {String(service.id).padStart(2, '0')}
+              <header className="max-w-xl">
+                <div className="mb-7 flex items-center justify-between">
+                  <span className="text-xs font-semibold tracking-[0.14em] text-amber-energy">
+                    {serviceNumber}
                   </span>
+                  <Icon className="h-5 w-5 text-grey-energy" aria-hidden="true" />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">{service.title}</h2>
-                <p className="text-grey-energy text-base leading-relaxed">
+                <h2
+                  id={`service-${service.id}-title`}
+                  className="font-syne text-[clamp(2rem,3vw,3rem)] font-bold leading-[1.04] tracking-[-0.04em] text-white-warm"
+                >
+                  {service.title}
+                </h2>
+                <p className="mt-5 max-w-lg text-base leading-relaxed text-grey-energy md:text-[1.0625rem]">
                   {service.fullDescription}
                 </p>
+              </header>
 
-                <div className="mt-6">
-                  <h4 className="text-[0.7rem] font-semibold text-amber-energy uppercase tracking-[0.08em] mb-3">
-                    Our Process
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {service.process.map((step, idx) => (
-                      <span
-                        key={idx}
-                        className="text-[0.7rem] px-3 py-1.5 rounded-full bg-card-bg border border-border-dark text-grey-energy"
-                      >
-                        {step}
-                      </span>
+              <div className="border-t border-border-dark pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-10 lg:pl-14">
+                <section aria-labelledby={`service-${service.id}-process`}>
+                  <h3
+                    id={`service-${service.id}-process`}
+                    className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-grey-energy"
+                  >
+                    Process
+                  </h3>
+                  <ol className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                    {service.process.map((step, stepIndex) => (
+                      <li key={step} className="flex items-baseline gap-3 text-sm text-light-energy">
+                        <span className="text-[0.68rem] font-semibold tracking-[0.08em] text-amber-energy">
+                          {String(stepIndex + 1).padStart(2, '0')}
+                        </span>
+                        <span>{step}</span>
+                      </li>
                     ))}
-                  </div>
-                </div>
-              </div>
+                  </ol>
+                </section>
 
-              {/* Right Column */}
-              <div className="bg-card-bg border border-border-dark rounded-lg p-8 md:p-10">
-                <h4 className="text-[0.7rem] font-semibold text-amber-energy uppercase tracking-[0.08em] mb-4">
-                  Key Benefits
-                </h4>
-                <ul className="space-y-3">
-                  {service.benefits.map((benefit, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-[0.875rem] text-light-energy">
-                      <span className="text-amber-energy mt-0.5">✓</span>
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6 pt-6 border-t border-border-dark">
+                <section
+                  aria-labelledby={`service-${service.id}-considerations`}
+                  className="mt-9 border-t border-border-dark pt-8"
+                >
+                  <h3
+                    id={`service-${service.id}-considerations`}
+                    className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-grey-energy"
+                  >
+                    What this can cover
+                  </h3>
+                  <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                    {service.benefits.map((benefit) => (
+                      <li key={benefit} className="flex items-start gap-3 text-sm leading-relaxed text-light-energy">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-energy" aria-hidden="true" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                <div className="mt-9 border-t border-border-dark pt-6">
                   <a
                     href="/contact"
-                    className="text-amber-energy font-medium hover:underline inline-flex items-center gap-2 text-[0.875rem]"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-light-energy transition-colors hover:text-amber-energy"
                   >
-                    Enquire about this service →
+                    Enquire about this service
+                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </div>
               </div>
-            </div>
-            </motion.div>
+            </motion.article>
           );
         })}
       </div>

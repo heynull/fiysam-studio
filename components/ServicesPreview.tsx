@@ -3,51 +3,53 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { previewServices } from '@/lib/services';
+import Container from '@/components/Container';
 
 export default function ServicesPreview() {
   return (
-    <section className="py-[100px] bg-obsidian">
-      <div className="grid md:grid-cols-2 gap-[60px] items-center">
-        <div>
-          <div className="section-label">What We Do</div>
-          <h2 className="section-title">
-            Product Work
-            <br />
-            <span className="text-amber-energy">From Idea to Release</span>
-          </h2>
-          <p className="section-sub text-sm md:text-base">
-            A practical set of product, design, and technical disciplines for
-            shaping and shipping software.
-          </p>
-          <div className="mt-8">
-            <Link href="/services" className="btn-ghost">
-              Explore Our Services →
+    <section className="site-section">
+      <Container>
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-24">
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-grey-energy">
+              Product work
+            </p>
+            <h2 className="section-heading mt-5 max-w-md">
+              Product work, made <span className="text-amber-energy">practical.</span>
+            </h2>
+            <p className="body-copy mt-6 max-w-md text-grey-energy">
+              Product decisions, interface design, software delivery, and the
+              foundations around a release.
+            </p>
+            <Link href="/services" className="btn-ghost mt-8">
+              Explore Product Work →
             </Link>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border-dark border border-border-dark rounded-lg overflow-hidden">
-          {previewServices.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <motion.div
+          <ol className="border-t border-border-dark">
+            {previewServices.map((service, index) => (
+              <motion.li
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.45, delay: index * 0.06 }}
                 viewport={{ once: true }}
-                className="group bg-card-bg p-6 md:p-8 hover:bg-[#141E28] transition-colors duration-300"
+                className="grid gap-4 border-b border-border-dark py-8 md:grid-cols-[3.5rem_minmax(0,0.7fr)_minmax(0,1fr)] md:gap-8 md:py-10"
               >
-                <Icon className="w-6 h-6 text-amber-energy mb-4" aria-hidden="true" />
-                <h3 className="text-[1rem] font-bold mb-2">{service.title}</h3>
-                <p className="text-[0.875rem] text-grey-energy leading-[1.65] font-light">{service.description}</p>
-                <span className="block mt-4 text-amber-energy text-[1.2rem] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">→</span>
-              </motion.div>
-            );
-          })}
+                <span className="font-syne text-sm font-bold text-amber-energy">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className="font-syne text-2xl font-bold tracking-[-0.03em] md:text-3xl">
+                  {service.title}
+                </h3>
+                <p className="max-w-xl text-sm leading-6 text-grey-energy md:text-base">
+                  {service.description}
+                </p>
+              </motion.li>
+            ))}
+          </ol>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

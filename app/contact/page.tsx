@@ -1,5 +1,6 @@
 import ContactForm from '../../components/ContactForm';
 import BackNavigation from '../../components/BackNavigation';
+import Container from '@/components/Container';
 
 export const metadata = {
   title: 'Contact Us | Fiysam Studio',
@@ -8,11 +9,13 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="px-6 md:px-[60px] pt-32 pb-16 md:pt-40 md:pb-20 bg-deep min-h-screen">
-      <div className="mb-6">
-        <BackNavigation label="← Back to Home" />
-      </div>
-      <ContactForm />
+    <section className="page-shell bg-deep">
+      <Container>
+        <div className="mb-10">
+          <BackNavigation label="← Back to Home" />
+        </div>
+        <ContactForm />
+      </Container>
     </section>
   );
 }

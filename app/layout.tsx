@@ -3,7 +3,6 @@ import { Syne, DM_Sans } from 'next/font/google';
 import './globals.css';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Container from '../components/Container';
 
 const syne = Syne({
   subsets: ['latin'],
@@ -31,11 +30,7 @@ export default function RootLayout({
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <body className="bg-obsidian text-white-warm">
         <Navigation />
-        <main>
-          <Container>
-            {children}
-          </Container>
-        </main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

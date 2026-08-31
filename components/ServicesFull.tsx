@@ -5,18 +5,18 @@ import { services } from '@/lib/services';
 
 export default function ServicesFull() {
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="mb-[60px]">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+    <div>
+      <div className="mb-16 md:mb-24">
+        <h1 className="page-heading mb-5">
           Product Work, <span className="text-amber-energy">Made Practical</span>
         </h1>
-        <p className="section-sub text-base md:text-lg max-w-3xl">
+        <p className="body-copy max-w-3xl">
           Product, design, and technical disciplines for taking software from
           an initial question to a deployable release.
         </p>
       </div>
 
-      <div className="space-y-16">
+      <div className="space-y-20 md:space-y-28">
         {services.map((service, index) => {
           const Icon = service.icon;
 
@@ -27,9 +27,9 @@ export default function ServicesFull() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="border-t border-border-dark pt-12 first:border-0 first:pt-0"
+              className="border-t border-border-dark pt-10 md:pt-14 first:border-0 first:pt-0"
             >
-            <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+            <div className="grid gap-10 md:grid-cols-2 md:gap-16">
               {/* Left Column */}
               <div>
                 <div className="flex items-center gap-4 mb-4">
@@ -61,7 +61,7 @@ export default function ServicesFull() {
               </div>
 
               {/* Right Column */}
-              <div className="bg-card-bg border border-border-dark rounded-lg p-8">
+              <div className="bg-card-bg border border-border-dark rounded-lg p-8 md:p-10">
                 <h4 className="text-[0.7rem] font-semibold text-amber-energy uppercase tracking-[0.08em] mb-4">
                   Key Benefits
                 </h4>

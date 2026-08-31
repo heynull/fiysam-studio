@@ -51,8 +51,8 @@ const capabilities = [
 
 export default function WorkGrid() {
   return (
-    <section className="py-[100px] bg-deep">
-      <div className="mb-[60px]">
+    <section className="pt-0">
+      <div className="mb-12 md:mb-16">
         <div className="section-label">Studio Focus</div>
         <h2 className="section-title">
           Product Domains

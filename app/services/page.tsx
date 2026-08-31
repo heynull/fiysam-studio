@@ -1,6 +1,7 @@
 import ServicesFull from '../../components/ServicesFull';
 import CTABand from '../../components/CTABand';
 import BackNavigation from '../../components/BackNavigation';
+import Container from '@/components/Container';
 
 export const metadata = {
   title: 'Our Services | Fiysam Studio',
@@ -10,11 +11,13 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="px-6 md:px-[60px] pt-32 pb-16 md:pt-40 md:pb-20 bg-deep min-h-screen">
-        <div className="mb-6">
-          <BackNavigation label="← Back to Home" />
-        </div>
-        <ServicesFull />
+      <section className="page-shell bg-deep">
+        <Container>
+          <div className="mb-10">
+            <BackNavigation label="← Back to Home" />
+          </div>
+          <ServicesFull />
+        </Container>
       </section>
       <CTABand />
     </>

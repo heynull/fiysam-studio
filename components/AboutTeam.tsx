@@ -23,12 +23,12 @@ const principles = [
 
 export default function AboutTeam() {
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="mb-16">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+    <div>
+      <div className="mb-14 md:mb-16">
+        <h1 className="page-heading mb-5">
           A Studio for <span className="text-amber-energy">Building and Learning</span>
         </h1>
-        <p className="section-sub text-base md:text-lg max-w-3xl">
+        <p className="body-copy max-w-3xl">
           Fiysam Studio is a Lagos-based product studio. We work on software
           ideas, client engagements, and Studio ventures through a build, ship,
           and learn approach.

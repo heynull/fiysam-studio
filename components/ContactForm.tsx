@@ -80,13 +80,13 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="grid md:grid-cols-[1fr_1.2fr] gap-[60px] items-start max-w-6xl mx-auto">
+    <div className="grid items-start gap-10 md:grid-cols-[1fr_1.2fr] md:gap-16">
       {/* Left - Contact Info */}
       <div>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+        <h1 className="page-heading mb-5">
           Let&apos;s Build <span className="text-amber-energy">Something Useful</span>
         </h1>
-        <p className="text-grey-energy text-[0.95rem] mb-10 max-w-md leading-relaxed">
+        <p className="body-copy mb-10 max-w-md">
           Have a project in mind? Let&apos;s talk about its goals, timeline, and
           constraints.
         </p>

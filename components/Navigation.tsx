@@ -49,7 +49,7 @@ export default function Navigation() {
               href="/contact"
               className="bg-amber-energy text-obsidian px-[22px] py-2.5 rounded font-bold text-sm hover:bg-[#f0b030] transition-colors"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </li>
         </ul>
@@ -83,7 +83,7 @@ export default function Navigation() {
             className="bg-amber-energy text-obsidian px-8 py-3 rounded font-bold"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Let's Talk
+            Let&apos;s Talk
           </Link>
         </div>
       </div>

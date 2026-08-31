@@ -10,8 +10,8 @@ export default function CTABand() {
           Ready to Build Something <span className="text-amber-energy">Great?</span>
         </h2>
         <p className="text-grey-energy text-sm md:text-base mb-8 max-w-2xl mx-auto">
-          Let's talk about your idea. We'll help you turn it into a product that
-          users love and your business grows with.
+          Tell us about the problem you&apos;re working on, its constraints, and
+          what a useful first release could look like.
         </p>
         <Link href="/contact" className="btn-primary inline-block">
           Start Your Project →

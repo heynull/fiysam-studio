@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import WorkGrid from '../components/WorkGrid';
 import ServicesPreview from '../components/ServicesPreview';
-import Container from '@/components/Container';
 
 export default function Home() {
   return (
@@ -42,8 +41,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-[1.05rem] text-grey-energy leading-[1.7] max-w-[480px] mt-6 mb-11 font-light"
           >
-            We design and develop software products for businesses across Africa.
-            From idea to launch — we build tools that solve real problems.
+            A Lagos-based software product studio for organizations building
+            useful tools for real operating needs.
           </motion.p>
 
           <motion.div
@@ -53,32 +52,13 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link href="/work" className="btn-primary text-center">
-              View Our Work →
+              Explore Studio Focus →
             </Link>
             <Link href="/contact" className="btn-ghost text-center justify-center">
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap gap-8 md:gap-16 mt-16 pt-8 border-t border-border-dark"
-          >
-            <div>
-              <div className="font-syne text-[1.8rem] font-extrabold text-amber-energy leading-none">10+</div>
-              <div className="text-[0.85rem] text-grey-energy">Products Built</div>
-            </div>
-            <div>
-              <div className="font-syne text-[1.8rem] font-extrabold text-amber-energy leading-none">4+</div>
-              <div className="text-[0.85rem] text-grey-energy">Years Building</div>
-            </div>
-            <div>
-              <div className="font-syne text-[1.8rem] font-extrabold text-amber-energy leading-none">100%</div>
-              <div className="text-[0.85rem] text-grey-energy">Client Satisfaction</div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

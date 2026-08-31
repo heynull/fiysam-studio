@@ -4,7 +4,7 @@ import BackNavigation from '../../components/BackNavigation';
 
 export const metadata = {
   title: 'About Us | Fiysam Studio',
-  description: 'We\'re a product studio building software that moves Africa forward. Meet our team and learn about our philosophy.',
+  description: 'Learn about Fiysam Studio and its build, ship, and learn philosophy.',
 };
 
 export default function AboutPage() {

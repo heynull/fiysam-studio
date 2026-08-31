@@ -4,7 +4,7 @@ import BackNavigation from '../../components/BackNavigation';
 
 export const metadata = {
   title: 'Our Work | Fiysam Studio',
-  description: 'Explore the software products we\'ve built for businesses across Africa.',
+  description: 'Explore Fiysam Studio\'s evolving product directions and areas of focus.',
 };
 
 export default function WorkPage() {
@@ -17,8 +17,8 @@ export default function WorkPage() {
         <div className="mb-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-3">Our Work</h1>
           <p className="text-grey-energy max-w-2xl">
-            A selection of products we've designed, developed, and launched with
-            our clients across different industries.
+            A working map of product domains for future Studio ventures and
+            client engagements.
           </p>
         </div>
         <WorkGrid />

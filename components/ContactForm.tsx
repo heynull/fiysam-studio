@@ -84,11 +84,11 @@ export default function ContactForm() {
       {/* Left - Contact Info */}
       <div>
         <h1 className="text-3xl md:text-4xl font-bold mb-4">
-          Let's Build <span className="text-amber-energy">Something Great</span>
+          Let&apos;s Build <span className="text-amber-energy">Something Useful</span>
         </h1>
         <p className="text-grey-energy text-[0.95rem] mb-10 max-w-md leading-relaxed">
-          Have a project in mind? Let's talk about it. We'll help you turn your
-          idea into a product that users love.
+          Have a project in mind? Let&apos;s talk about its goals, timeline, and
+          constraints.
         </p>
 
         <div className="space-y-6">

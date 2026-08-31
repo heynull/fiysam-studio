@@ -4,7 +4,7 @@ import BackNavigation from '../../components/BackNavigation';
 import Container from '@/components/Container';
 
 export const metadata = {
-  title: 'Our Work | Fiysam Studio',
+  title: 'Studio Concepts | Fiysam Studio',
   description: 'Studio Concept projects: fictional development fixtures for Fiysam Studio.',
 };
 
@@ -14,7 +14,7 @@ export default function WorkPage() {
       <section className="page-shell bg-deep">
         <Container>
           <div className="mb-10">
-            <BackNavigation label="← Back to Home" />
+            <BackNavigation label="Back to Home" />
           </div>
           <div className="mb-14 md:mb-16">
             <p className="section-label">Work</p>

@@ -17,8 +17,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Fiysam Studio — Software Product Studio',
-  description: 'We build software products and tools for businesses across Africa.',
+  title: 'Fiysam Studio | Product Studio',
+  description: 'Fiysam Studio is a Lagos-based product studio for useful software.',
 };
 
 export default function RootLayout({

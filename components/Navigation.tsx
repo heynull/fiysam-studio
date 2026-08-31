@@ -56,6 +56,7 @@ export default function Navigation() {
           </ul>
 
           <button
+            type="button"
             className="z-50 text-white-warm md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -68,7 +69,7 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile Navigation Menu */}
-      <div id="mobile-navigation" className={`fixed top-0 left-0 right-0 bottom-0 bg-deep z-40 transition-transform duration-300 md:hidden ${
+      <div id="mobile-navigation" aria-hidden={!isMobileMenuOpen} inert={!isMobileMenuOpen} className={`fixed top-0 left-0 right-0 bottom-0 bg-deep z-40 transition-transform duration-300 md:hidden ${
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
         <div className="flex flex-col items-center justify-center h-full gap-8">

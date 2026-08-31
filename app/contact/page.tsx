@@ -4,7 +4,7 @@ import Container from '@/components/Container';
 
 export const metadata = {
   title: 'Contact Us | Fiysam Studio',
-  description: 'Let\'s build something great together. Reach out to Fiysam Studio for your software product needs.',
+  description: 'Contact Fiysam Studio about a product question, an existing software challenge, or an early idea.',
 };
 
 export default function ContactPage() {

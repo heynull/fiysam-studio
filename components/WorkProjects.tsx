@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { ArrowUpRight, Layers3 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { projectStatusLabels, projects } from '@/lib/projects';
@@ -35,8 +36,12 @@ export default function WorkProjects() {
                 <p className="mt-5 max-w-xl text-base leading-relaxed text-light-energy md:text-[1.0625rem]">
                   {project.shortDescription}
                 </p>
+                <Link href={`/work/${project.slug}`} className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-light-energy transition-colors hover:text-amber-energy">
+                  View concept brief
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
 
-                <dl className="mt-10 grid gap-7 border-t border-border-dark pt-7 sm:grid-cols-2">
+                <dl className="mt-8 grid gap-7 border-t border-border-dark pt-7 sm:grid-cols-2">
                   <div>
                     <dt className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-grey-energy">Challenge</dt>
                     <dd className="mt-3 text-sm leading-relaxed text-grey-energy">{project.challenge}</dd>

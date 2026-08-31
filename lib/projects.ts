@@ -50,3 +50,14 @@ export const projectStatusLabels: Record<ProjectStatus, string> = {
   client: 'Client Work',
   venture: 'Studio Venture',
 };
+
+export function getProjectBySlug(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}
+
+export function getNextProject(currentSlug: string) {
+  const currentIndex = projects.findIndex((project) => project.slug === currentSlug);
+  const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % projects.length;
+
+  return projects[nextIndex];
+}

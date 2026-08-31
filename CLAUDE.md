@@ -59,7 +59,9 @@ The website must support both models without making Studio look like a conventio
 
 Studio does not currently have verified Studio-owned products that should be presented as launched products.
 
-Do not invent:
+Fictional content may be used as explicitly labeled concept/demo content during development. Never present fictional projects, clients, testimonials, metrics, outcomes, team members, or business history as verified facts.
+
+Never present the following as verified facts:
 
 - products
 - projects
@@ -71,7 +73,7 @@ Do not invent:
 - user counts
 - outcomes
 
-Do not use fictional portfolio work as if it were real.
+Do not use fictional portfolio work as if it were real. Concept/demo content must be explicitly labeled wherever it appears.
 
 The site should be structured so real products, experiments, client engagements, and case studies can be added naturally as they exist.
 

@@ -19,7 +19,7 @@
 - Preserve accessibility.
 - Use semantic HTML.
 - Use Lucide React for interface icons; do not use emoji as UI icons.
-- Do not invent business facts, products, clients, testimonials, metrics, or case studies.
+- Fictional content may be used only as explicitly labeled concept/demo content during development. Never present fictional projects, clients, testimonials, metrics, outcomes, team members, or business history as verified facts.
 - Never expose secrets.
 - Do not modify `.env` files unless explicitly instructed.
 - Do not make destructive changes.

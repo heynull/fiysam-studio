@@ -19,7 +19,7 @@ Avoid corporate filler, exaggerated promises, vague innovation language, unneces
 
 ## Truthfulness
 
-Never invent clients, products, projects, testimonials, metrics, partnerships, revenue, user numbers, or outcomes.
+Fictional content may be used as explicitly labeled concept/demo content during development. Never present fictional projects, clients, testimonials, metrics, outcomes, team members, or business history as verified facts.
 
 If information is unavailable, omit it or clearly frame it as an idea, capability, experiment, or future direction.
 
@@ -48,7 +48,7 @@ Do not manufacture outcomes.
 
 There are no verified Studio-owned launched products to showcase yet.
 
-Do not fill a portfolio section with fictional projects.
+Fictional projects may appear only as explicitly labeled Studio Concept or demo content during development; never present them as verified client work, launched products, or evidence of business history.
 
 Structure the information architecture so future real work can be added naturally.
 

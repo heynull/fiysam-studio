@@ -45,6 +45,14 @@ body {
   outline-offset: 3px;
 }
 
+:where(a[href], button:not(:disabled), select:not(:disabled)) {
+  cursor: pointer;
+}
+
+:where(button:disabled, select:disabled) {
+  cursor: not-allowed;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: var(--font-syne), sans-serif;
 }
@@ -137,33 +145,49 @@ h1, h2, h3, h4, h5 {
 .btn-primary {
   background: var(--color-amber-energy);
   color: var(--color-obsidian);
-  padding: 14px 32px;
-  border-radius: 4px;
+  min-height: 44px;
+  padding: 12px 24px;
+  border-radius: 6px;
   font-weight: 700;
   font-size: 0.9rem;
   text-decoration: none;
   letter-spacing: 0.02em;
-  transition: all 0.2s;
-  display: inline-block;
+  white-space: nowrap;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-syne), sans-serif;
   cursor: pointer;
 }
 
 .btn-primary:hover {
   background: #f0b030;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(232, 160, 32, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(232, 160, 32, 0.24);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
 }
 
 .btn-ghost {
   color: var(--color-light-energy);
-  padding: 14px 28px;
+  min-height: 44px;
+  padding: 12px 24px;
   border: 1px solid var(--color-border-dark);
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: 500;
   font-size: 0.9rem;
   text-decoration: none;
-  transition: all 0.2s;
+  white-space: nowrap;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -172,7 +196,12 @@ h1, h2, h3, h4, h5 {
 
 .btn-ghost:hover {
   border-color: var(--color-amber-energy);
+  background: rgba(17, 24, 32, 0.72);
   color: var(--color-amber-energy);
+}
+
+.btn-ghost:active {
+  transform: translateY(1px);
 }
 
 /* Utilities */

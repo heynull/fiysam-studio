@@ -15,8 +15,7 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr_0.9fr_1fr] lg:gap-16">
           <div>
             <Link href="/" className="inline-block font-syne text-2xl font-extrabold tracking-[-0.04em] text-white-warm md:text-[1.8rem]">
-              FIYSAM<span className="text-amber-energy">.</span>
-              <span className="ml-2 text-sm font-semibold tracking-[0.16em] text-grey-energy">STUDIO</span>
+              FIYSAM <span className="text-amber-energy">STUDIO</span>
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-[1.7] text-grey-energy md:text-base">
               A product studio based in Lagos, Nigeria.

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { X } from 'lucide-react';
 import Container from '@/components/Container';
 
 const navItems = [
@@ -7,6 +8,41 @@ const navItems = [
   { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' },
 ];
+
+type SocialLink = {
+  name: 'X' | 'Instagram' | 'LinkedIn';
+  url: string | null;
+};
+
+// Replace null values only with verified Fiysam Studio profile URLs.
+const socialLinks: SocialLink[] = [
+  { name: 'X', url: null },
+  { name: 'Instagram', url: null },
+  { name: 'LinkedIn', url: null },
+];
+
+function SocialIcon({ name }: Pick<SocialLink, 'name'>) {
+  if (name === 'X') {
+    return <X className="h-[1.05rem] w-[1.05rem]" aria-hidden="true" />;
+  }
+
+  if (name === 'Instagram') {
+    return (
+      <svg viewBox="0 0 24 24" className="h-[1.05rem] w-[1.05rem]" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+        <circle cx="12" cy="12" r="3.75" />
+        <circle cx="17.25" cy="6.75" r="0.75" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" className="h-[1.05rem] w-[1.05rem]" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <circle cx="6.25" cy="7" r="1" fill="currentColor" stroke="none" />
+      <path d="M5.25 10.25v7.5M10.25 17.75v-4.2a3.3 3.3 0 0 1 6.5 0v4.2M10.25 10.25v7.5" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   return (
@@ -20,6 +56,34 @@ export default function Footer() {
             <p className="mt-5 max-w-xs text-sm leading-[1.7] text-grey-energy md:text-base">
               A product studio based in Lagos, Nigeria.
             </p>
+            <div className="mt-6 flex items-center gap-2" aria-label="Fiysam Studio social profiles">
+              {socialLinks.map(({ name, url }) => {
+                const sharedClasses = 'inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-dark text-grey-energy transition-colors duration-200';
+
+                return url ? (
+                  <a
+                    key={name}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={name}
+                    className={`${sharedClasses} cursor-pointer hover:border-amber-energy hover:text-amber-energy`}
+                  >
+                    <SocialIcon name={name} />
+                  </a>
+                ) : (
+                  <span
+                    key={name}
+                    aria-label={`${name} profile URL pending`}
+                    role="img"
+                    title={`${name} profile URL pending`}
+                    className={`${sharedClasses} cursor-default opacity-70`}
+                  >
+                    <SocialIcon name={name} />
+                  </span>
+                );
+              })}
+            </div>
           </div>
 
           <div>
@@ -56,7 +120,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border-dark pt-6 text-[0.78rem] text-grey-energy md:mt-16 md:flex-row md:items-center">
           <span>© {new Date().getFullYear()} Fiysam Studio. All rights reserved.</span>
-          <span className="text-grey-energy/60">Built with Next.js &amp; Tailwind CSS</span>
+          <span className="text-grey-energy/60">Crafted by Fiysam Studio</span>
         </div>
       </Container>
     </footer>

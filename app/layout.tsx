@@ -1,19 +1,28 @@
 import type { Metadata } from 'next';
-import { Syne, DM_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
-const syne = Syne({
-  subsets: ['latin'],
+const syne = localFont({
+  src: [
+    { path: './fonts/Syne-Regular.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/Syne-SemiBold.ttf', weight: '600', style: 'normal' },
+    { path: './fonts/Syne-Bold.ttf', weight: '700', style: 'normal' },
+    { path: './fonts/Syne-ExtraBold.ttf', weight: '800', style: 'normal' },
+  ],
   variable: '--font-syne',
-  weight: ['400', '600', '700', '800'],
 });
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
+const dmSans = localFont({
+  src: [
+    { path: './fonts/DMSans-Light.ttf', weight: '300', style: 'normal' },
+    { path: './fonts/DMSans-Regular.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/DMSans-Medium.ttf', weight: '500', style: 'normal' },
+    { path: './fonts/DMSans-SemiBold.ttf', weight: '600', style: 'normal' },
+    { path: './fonts/DMSans-Bold.ttf', weight: '700', style: 'normal' },
+  ],
   variable: '--font-dm-sans',
-  weight: ['300', '400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
